@@ -1,3 +1,4 @@
+//Все целые числа из диапазона от A до B, кратные трём(A<=B); 
 // for
 #include <iostream>
 using namespace std;
