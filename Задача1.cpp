@@ -3,26 +3,6 @@
 #include <cmath>
 using namespace std;
 
-
-string checkPoint(double x, double y) 
-{
-    double distance = sqrt(x*x + y*y);
-    
-    if(distance < 3) 
-    {
-        return "Нет"; 
-    }
-    if(distance > 7) 
-    {
-        return "Нет"; 
-    }
-    if(abs(distance - 3) <= 1e-6 || abs(distance - 7) <= 1e-6) 
-    {
-        return "На границе"; 
-    }
-    return "Да"; 
-}
-
 int main() 
 {
     double x, y;
@@ -32,9 +12,21 @@ int main()
     
     cout << "Введите координату y: ";
     cin >> y;
-    
-    string result = checkPoint(x, y);
-    cout << "Точка (" << x << ", " << y << ") находится: " << result << endl;
-    
+
+    double distance = sqrt(x*x + y*y);
+
+    if (abs(distance - 3) <= 1e-6 || abs(distance - 7) <= 1e-6) 
+    {
+        cout << "На границе";
+    }
+    else if (distance > 3 && distance < 7) 
+    {
+        cout << "Да";
+    }
+    else 
+    {
+        cout << "Нет";
+    }
+
     return 0;
 }
