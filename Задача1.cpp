@@ -15,7 +15,7 @@ int main()
 
     double distance = sqrt(x*x + y*y);
 
-    if (abs(distance - 3) <= 1e-6 || abs(distance - 7) <= 1e-6) 
+    if (distance == 3 || distance == 7) 
     {
         cout << "На границе";
     }
